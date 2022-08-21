@@ -1,0 +1,26 @@
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.headerUL li {
+    display: inline;
+    list-style-type: none;
+    padding: 10px 15px;
+}
+
+.headerUL .rightLI {
+    float: right;
+    background-color: dodgerblue;
+    margin-right: 10px;
+    color: white;
+    border-radius: 10px;
+}

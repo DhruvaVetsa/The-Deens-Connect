@@ -1,0 +1,28 @@
+<%- include("includes/header.ejs") %>
+    <%- include("includes/navbar1.ejs") %>
+    <marquee style="color:red"><%= errorMessage %></marquee>
+        <center>
+            <form method="post" action="/createaccount">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <input type="text" placeholder="Name" name="user_real_name" required>
+                    <input type="text" placeholder="Class & Section Eg. VIII-D" name="user_class"
+                        required>
+                    <input type="date" name="user_dob" placeholder="Date Of Birth" required>
+                    <input type="text" name="user_admission_number" placeholder="Admission Number Eg : G-023-2021-22"
+                        required>
+                </fieldset>
+                <fieldset>
+                    <legend>User Profile Details</legend>
+                    <input type="email" placeholder="Email" name="user_email" required>
+                    <input type="password" placeholder="Password" name="user_password" required>
+                    <input type="username" placeholder="Username" name="user_username" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Form Control Options</legend>
+                    <button type="submit"> Create an Account</button> <button type="reset">Reset Your
+                        Responses</button>
+                </fieldset>
+            </form>
+        </center>
+        <%- include("includes/footer.ejs") %>
