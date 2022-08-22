@@ -26,7 +26,8 @@ module.exports = class get {
         this.res.render("signin", {
             pageTitle: "The Deen's Connect | Sign In",
             styleURLs: ["global", "signin"],
-            scriptURLs: []
+            scriptURLs: [],
+            errorMessage : ""
         })
     }
 }

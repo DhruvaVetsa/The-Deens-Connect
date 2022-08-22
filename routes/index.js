@@ -20,4 +20,8 @@ router.post('/createaccount', (req, res, next) => {
     new post(req, res, next).createaccount();
 })
 
+router.post('/signin', (req, res, next) => {
+    new post(req, res, next).createaccount();
+})
+
 module.exports = router;

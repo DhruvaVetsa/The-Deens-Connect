@@ -3,9 +3,9 @@
         <div id="card">
             <img src="/imgs/LOGO.png" alt="Deens Academy Logo" title="Deens Academy Logo">
             <h2>The Deen's Connect</h2>
-            <form>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required><br>
+            <form action="/signin" method="post">
+                <input type="text" placeholder="Username" name="user_username" required>
+                <input type="password" placeholder="Password" name="user_password" required><br>
                 <button type="submit">Login</button>
             </form>
         </div>
