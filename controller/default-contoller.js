@@ -166,7 +166,8 @@ module.exports = class post {
     }
 
     get_signout() {
-        var updated_user = user_info;
+        fetchAllData();
+        var updated_user = activeUserData;
         updated_user.active = false;
         usersDB.findByIdAndUpdate({ _id: user_info._id }, { '$set': updated_user }, { require: true }).then((udata) => {
             this.res.redirect('/signin');
@@ -175,14 +176,24 @@ module.exports = class post {
     }
 
     get_settings() {
-        this.res.redirect("/settings/customize-profile")
+        if (activeUserData != {}) {
+            this.res.render("settings", {
+                pageTitle: "The Deen's Connect | Sign In",
+                styleURLs: ["global", "settings"],
+                scriptURLs: ["settings"],
+                userDATA: activeUserData
+            })
+        }
+        else {
+            this.res.redirect("/");
+        }
     }
 
     get_customizeProfile() {
         if (activeUserData != {}) {
             this.res.render("settings", {
                 pageTitle: "The Deen's Connect | Sign In",
-                styleURLs: ["global", "settings", "/settings/customize-profile"],
+                styleURLs: ["global", "settings"],
                 scriptURLs: ["settings"],
                 userDATA: activeUserData,
                 ejsFile: "customizeprofile"
@@ -197,7 +208,7 @@ module.exports = class post {
         if (activeUserData != {}) {
             this.res.render("settings", {
                 pageTitle: "The Deen's Connect | Sign In",
-                styleURLs: ["global", "settings", "/settings/customize-profile"],
+                styleURLs: ["global", "settings"],
                 scriptURLs: ["settings"],
                 userDATA: activeUserData,
                 ejsFile: "customizeprofile"
@@ -212,7 +223,7 @@ module.exports = class post {
         if (activeUserData != {}) {
             this.res.render("settings", {
                 pageTitle: "The Deen's Connect | Sign In",
-                styleURLs: ["global", "settings", "/settings/customize-profile"],
+                styleURLs: ["global", "settings"],
                 scriptURLs: ["settings"],
                 userDATA: activeUserData,
                 ejsFile: "customizeprofile"
@@ -227,7 +238,7 @@ module.exports = class post {
         if (activeUserData != {}) {
             this.res.render("settings", {
                 pageTitle: "The Deen's Connect | Sign In",
-                styleURLs: ["global", "settings", "/settings/customize-profile"],
+                styleURLs: ["global", "settings"],
                 scriptURLs: ["settings"],
                 userDATA: activeUserData,
                 ejsFile: "customizeprofile"
@@ -243,7 +254,7 @@ module.exports = class post {
         if (activeUserData != {}) {
             this.res.render("settings", {
                 pageTitle: "The Deen's Connect | Sign In",
-                styleURLs: ["global", "settings", "/settings/customize-profile"],
+                styleURLs: ["global", "settings"],
                 scriptURLs: ["settings"],
                 userDATA: activeUserData,
                 ejsFile: "customizeprofile"
@@ -259,7 +270,7 @@ module.exports = class post {
         if (activeUserData != {}) {
             this.res.render("settings", {
                 pageTitle: "The Deen's Connect | Sign In",
-                styleURLs: ["global", "settings", "/settings/customize-profile"],
+                styleURLs: ["global", "settings"],
                 scriptURLs: ["settings"],
                 userDATA: activeUserData,
                 ejsFile: "customizeprofile"

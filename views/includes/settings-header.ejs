@@ -1,0 +1,22 @@
+<%- include("header.ejs") %>
+    <%- include("navbar2.ejs") %>
+        <div id="container">
+            <div class="tab">
+                <button class="tablinks" onclick="window.location.replace('/settings');">General Settings</button>
+                <button class="tablinks" onclick="window.location.replace('/settings/customize-profile');">Customize
+                    Profile</button>
+                <button class="tablinks" onclick="window.location.replace('/settings/edit-password');">Edit
+                    Password</button>
+                <button class="tablinks" onclick="window.location.replace('/settings/edit-username');">Edit
+                    Username</button>
+                <button class="tablinks" onclick="window.location.replace('/settings/change-email-address');">Change
+                    Email
+                    Address</button>
+                <button class="tablinks" onclick="window.location.replace('/settings/forgot-password');">Forgot
+                    Password</button>
+                <button class="tablinks" onclick="window.location.replace('/settings/delete-account');"
+                    style="color: red !important;">Delete
+                    Account</button>
+            </div>
+
+            <div class="tabcontent">
