@@ -1,0 +1,20 @@
+.vertical-menu {
+    width: 200px;    
+    border-right: 1px solid black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.vertical-menu div {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu div:hover {
+    background-color: #ccc;
+}

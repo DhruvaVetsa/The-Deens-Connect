@@ -12,9 +12,8 @@ let schema = mongoose.Schema(
         name: String,
         isAdmin: Boolean,
         isTeacher: Boolean,
-        gender : String,
-        active : Boolean
+        gender : String
     }
 );
 
-module.exports = mongoose.model("usersData", schema);
+module.exports = mongoose.model("single-user", schema);

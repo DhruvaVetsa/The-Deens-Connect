@@ -1,5 +1,4 @@
-input {
-    display: block;
+input, select, option{
     margin: 10px;
     padding: 10px;
     width: 400px;
@@ -33,4 +32,16 @@ form {
     width: fit-content;
     padding: 10px;
     border-radius: 10px;
+}
+
+.halfWidth {
+    width: 175px !important;
+}
+
+.triWidth {
+    width: 100px !important;
+}
+
+.quadWidth {
+    width: 61px !important;
 }
