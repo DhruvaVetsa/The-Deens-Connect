@@ -1,2 +1,37 @@
-<%- include("includes/settings/header.ejs") %>
-    <%- include("includes/settings/footer.ejs") %>
+<%- include("../includes/settings-header.ejs") %>
+    <style>
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 350px;
+        }
+    </style>
+    <marquee style="color: red;">
+        <%= error %>
+    </marquee>
+    <h1 style="text-align: center;">Deens Konnect Account Deletion</h1>
+    <p>We will miss you so much <%= username %>. To delete your account, enter the following credentials</p>
+    <form action="/settings/deleteaccount" method="post">
+        <fieldset>
+            <legend>Deens Konnect Credentials</legend>
+            <label>Name</label><br>
+            <input type="text" placeholder="Enter your Real Name" required name="user_realname"><br><br>
+            <label>Username </label><br>
+            <input type="text" placeholder="Enter your Deens Konnect Username" required name="user_username"><br><br>
+            <label>Password</label><br>
+            <input type="password" placeholder="Enter your Deens Konnect Password" required
+                name="user_password"><br><br>
+            <label>Email Address</label><br>
+            <input type="email" placeholder="Enter your email address useed to make this account" required
+                name="user_email"><br><br>
+            <p style="color: red; font-size: 15px;"><b><u>Note :</u> </b> After clicking delete account, the action you have
+                made is <b>undone</b>. All of your chats, personal data, servers, files, photos and videos will be
+                <b>erased</b>.</p>
+            <input type="checkbox" name="ideleteaccount" id="ideleteaccount" required> <label>I agree with deleting my
+                accout. Deens Konnect will not be responsible if your account is no more.</label><br><br>
+        </fieldset><br><br>
+        <fieldset>
+            <legend>Final Touches</legend>
+            <button type="reset">Reset Responses</button>
+            <button type="submit">Delete Account</button>
+        </fieldset>
+    </form>
+    <%- include("../includes/settings-footer.ejs") %>

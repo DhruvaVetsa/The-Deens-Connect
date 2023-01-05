@@ -1,2 +1,41 @@
-<%- include("includes/settings-header.ejs") %>
-    <%- include("includes/settings-footer.ejs") %>
+<%- include("../includes/settings-header.ejs") %>
+    <h1 style="text-align: center;">Profile Customization</h1>
+    <p>Fill the below form to change the looks of your profile!</p>
+    <form action="/settings/profile-customization-post-req" method="post">
+
+        <fieldset>
+            <legend>Profile Settings</legend>
+            <label>About Yourself</label><br>
+            <textarea name="aboutUser" maxlength="50"
+                placeholder="Write About Yourself"><%= userDATA.profileDetails.aboutUser %></textarea><br><br>
+            <label>Your Likings</label><br>
+            <textarea name="userLikings" maxlength="50"
+                placeholder="Your Likings"><%= userDATA.profileDetails.userLikings %></textarea><br><br>
+            <label>Your Dream</label><br>
+            <textarea name="userDream" maxlength="50"
+                placeholder="Your Dream"><%= userDATA.profileDetails.userDream %></textarea><br><br>
+            <label>Discord</label><br>
+            <input value="<%= userDATA.profileDetails.discordName %>" type="text" name="discordName" maxlength="50"
+                placeholder="Discord Name">
+            <input value="<%= userDATA.profileDetails.discordID %>" type="number" name="discordID" maxlength="4"
+                minlength="4" placeholder="Discord ID"><br><br>
+            <label>Youtube Channel</label><br>
+            <input value="<%= userDATA.profileDetails.youtubeChannel %>" class="link" type="text" name="youtubeChannel"
+                placeholder="Youtube Channel Link"><br><br>
+            <label>Skype</label><br>
+            <input value="<%= userDATA.profileDetails.skype %>" type="text" name="skype"
+                placeholder="Skype Name"><br><br>
+            <label>Git Hub</label><br>
+            <input value="<%= userDATA.profileDetails.github %>" class="link" type="text" name="github"
+                placeholder="Github Link"><br><br>
+            <label>Instagram</label><br>
+            <input value="<%= userDATA.profileDetails.insta %>" class="link" type="text" name="insat"
+                placeholder="Instagram Profile Link"><br><br>
+            <label>Facebook</label><br>
+            <input value="<%= userDATA.profileDetails.fb %>" class="link" type="text" name="fb"
+                placeholder="Facebook Profile Link"><br><br>
+        </fieldset>
+        <button type="submit">Update Results</button>
+        <button type="reset">Reset Responses</button>
+    </form>
+    <%- include("../includes/settings-footer.ejs") %>

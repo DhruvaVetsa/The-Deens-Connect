@@ -1,22 +1,16 @@
 <%- include("header.ejs") %>
     <%- include("navbar2.ejs") %>
         <div id="container">
-            <div class="tab">
-                <button class="tablinks" onclick="window.location.replace('/settings');">General Settings</button>
-                <button class="tablinks" onclick="window.location.replace('/settings/customize-profile');">Customize
-                    Profile</button>
-                <button class="tablinks" onclick="window.location.replace('/settings/edit-password');">Edit
-                    Password</button>
-                <button class="tablinks" onclick="window.location.replace('/settings/edit-username');">Edit
-                    Username</button>
-                <button class="tablinks" onclick="window.location.replace('/settings/change-email-address');">Change
-                    Email
-                    Address</button>
-                <button class="tablinks" onclick="window.location.replace('/settings/forgot-password');">Forgot
-                    Password</button>
-                <button class="tablinks" onclick="window.location.replace('/settings/delete-account');"
+            <div class="sidenav">
+                <a class="tablinks" onclick="window.location.replace('/settings');">General Settings</a>
+                <a class="tablinks" onclick="window.location.replace('/settings/customize-profile');">Customize
+                    Profile</a>
+                <a class="tablinks" onclick="window.location.replace('/settings/edit-password');">Edit
+                    Password</a>
+                <a class="tablinks" onclick="window.location.replace('/settings/delete-account');"
                     style="color: red !important;">Delete
-                    Account</button>
+                    Account</a>
+                <a class="tablinks" onclick="window.location.replace('/settings/make-your-dp');">Make your DP</a>
             </div>
 
-            <div class="tabcontent">
+            <div class="main">

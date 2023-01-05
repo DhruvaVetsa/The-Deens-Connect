@@ -27,4 +27,24 @@ router.get('/delete-account', (req, res, next) => {
     new controller(req, res, next).get_deleteAccount();
 });
 
+router.post('/profile-customization-post-req', (req, res, next) => {
+    new controller(req, res, next).post_profileCustomization();
+});
+
+router.get('/make-your-dp', (req, res, next) => {
+    new controller(req, res, next).getDPMaker();
+})
+
+router.post('/changeDP', (req, res, next) => {
+    new controller(req, res, next).postUpdateDP();
+})
+
+router.post('/deleteaccount', (req, res, next) => {
+    new controller(req, res, next).postDeleteAccount();
+})
+
+router.post('/change-profile-banner-colour', (req, res, next) => {
+    new controller(req, res, next).postChangeProfileBanner();
+})
+
 module.exports = router;

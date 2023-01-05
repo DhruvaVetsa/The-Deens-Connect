@@ -14,7 +14,7 @@ button {
 }
 
 fieldset {
-    width: max-content;
+    width: 550px;
     padding: 10px 15px;
     margin: 20px;
 }
@@ -44,4 +44,8 @@ form {
 
 .quadWidth {
     width: 61px !important;
+}
+
+fieldset  fieldset {
+    width: fit-content;
 }

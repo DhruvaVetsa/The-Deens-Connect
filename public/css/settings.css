@@ -1,42 +1,80 @@
-* {
-    box-sizing: border-box
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: absolute;
+    z-index: 1;
+    top: 20;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
-#container {
-    margin-top: 30px;
-}
-
-.tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
-}
-
-.tab button {
-    display: block;
-    background-color: inherit;
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    width: 160px;
     color: black;
-    padding: 22px 16px;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: gray;
+}
+
+.main {
+    margin-left: 160px;
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav button {
+        font-size: 18px;
+    }
+}
+
+form {
+    padding: 20px;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+textarea {
+    padding: 10px;
     width: 100%;
+    height: 100px;
+}
+
+input {
+    padding: 10px 15px;
+}
+
+.link {
+    width: 50%;
+}
+
+form button {
+    margin: 10px;
+    padding: 10px;
     border: none;
-    outline: none;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 13pt;
+    width: 200px;
+    color: white;
+    border-radius: 20px;
 }
 
-.tab button:hover {
-    background-color: #ddd;
+form button[type="submit"] {
+    background-color: red;
 }
 
-.tabcontent {
-    float: left;
-    padding: 0px 12px;
-    width: 70%;
-    border-left: none;
-    height: 400px;
-    overflow-y: scroll;
+form button[type="reset"] {
+    background-color: green;
+}
+
+fieldset {
+    padding: 20px;
 }

@@ -1,5 +1,5 @@
 <ul class="headerUL">
-    <li onclick="window.location.replace('/profile')"><i class="fa-solid fa-person <%= (userDATA.gender == 'female')? '-dress' : '' %>"></i> Your Profile</li>
+    <li onclick="window.location.replace('/profile')"><%- maleFemaleIcon %> Your Profile</li>
     <li onclick="window.location.replace('/chats')"><i class="fa-solid fa-user-plus"></i> One-To-One chats</li>
     <li onclick="window.location.replace('/servers')"><i class="fa-solid fa-user-plus"></i> Servers</li>
     <li class="rightLI" onclick="window.location.replace('/settings')"><i class="fa-solid fa-gear"></i> Settings</li>

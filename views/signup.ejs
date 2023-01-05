@@ -8,28 +8,38 @@
                 <fieldset>
                     <legend>Personal Details</legend>
                     <input type="text" placeholder="Name" name="user_real_name" required><br>
-                    <!-- <input type="text" placeholder="Class & Section Eg. VIII-D" name="user_class" required><br> -->
-                    <input class="halfWidth" required type="number" name="class" max="12" placeholder="Class Eg. 2"> 
-                    <input required class="halfWidth" type="text" maxlength="1" name="section" placeholder="Section Eg. D"><br>
+                    <input class="halfWidth" required type="number" name="class" max="12" placeholder="Class Eg. 2">
+                    <input required class="halfWidth" type="text" maxlength="1" name="section"
+                        placeholder="Section Eg. D"><br>
+                        <label>Gender</label>
                     <select name="gender" required>
                         <option>Male <i style="color: dodgerblue;" class="fa-solid fa-mars"></i></option>
                         <option>Female <i style="color: magenta;" class="fa-solid fa-venus"></i></option>
                     </select><br>
-                    <!-- <input type="date" name="user_dob" placeholder="Date Of Birth" required><br> -->
-                    <input class="triWidth" type="number" maxlength="2" max="31" min="1" minlength="1" required name="date_dob" placeholder="Date">
-                    <input type="number" class="triWidth" maxlength="2" minlength="1" min="1" required name="month_dob" placeholder="Month">
-                    <input type="number" maxlength="4" class="triWidth" minlength="4" max="2022" min="2003" required name="year_dob" placeholder="Year"><br>
-                    <!-- <input type="text" name="user_admission_number" placeholder="Admission Number Eg : G-023-2021-22"
-                        required><br> -->
-                    <select class="quadWidth" name="campus_ADM_No" required>
-                        <option value="A">A</option>
-                        <option value="G">G</option>
-                        <option value="B">B</option>
-                        <option value="R">R</option>
-                    </select> -
-                    <input class="quadWidth" type="number" name="adminssion_Code" minlength="3" maxlength="3" required placeholder="NNN"> - 
-                    <input class="quadWidth" type="number" name="admission_year1" minlength="4" maxlength="4" min="2006" required placeholder="YYYY"> - 
-                    <input class="quadWidth" type="number" name="admission_year2" minlength="2" maxlength="2" min="07" required placeholder="YY"><br>
+                    <fieldset>
+                        <legend>Date Of Birth</legend>
+                        <input class="triWidth" type="number" maxlength="2" max="31" min="1" minlength="1" required
+                            name="date_dob" placeholder="Date">
+                        <input type="number" class="triWidth" maxlength="2" minlength="1" min="1" max="12" required
+                            name="month_dob" placeholder="Month">
+                        <input type="number" maxlength="4" class="triWidth" minlength="4" max="2022" min="2003" required
+                            name="year_dob" placeholder="Year"><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Admission Number</legend>
+                        <select class="quadWidth" name="campus_ADM_No" required>
+                            <option value="A">A</option>
+                            <option value="G">G</option>
+                            <option value="B">B</option>
+                            <option value="R">R</option>
+                        </select> -
+                        <input class="quadWidth" type="number" name="adminssion_Code" minlength="3" maxlength="3"
+                            required placeholder="NNN"> -
+                        <input class="quadWidth" type="number" name="admission_year1" minlength="4" maxlength="4"
+                            min="2006" required placeholder="YYYY"> -
+                        <input class="quadWidth" type="number" name="admission_year2" minlength="2" maxlength="2"
+                            min="07" required placeholder="YY"><br>
+                    </fieldset>
                     <input type="email" placeholder="Email" name="user_email" required><br>
                 </fieldset>
                 <fieldset>

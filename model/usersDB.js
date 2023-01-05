@@ -13,7 +13,22 @@ let schema = mongoose.Schema(
         isAdmin: Boolean,
         isTeacher: Boolean,
         gender : String,
-        active : Boolean
+        active : Boolean,
+        profileDetails : {
+            aboutUser : String,
+            userLikings : String,
+            userDream : String,
+            discordName : String,
+            discordID : Number,
+            youtubeChannel : String,
+            skype : String,
+            github : String,
+            insta : String,
+            fb : String
+        },
+        dpImageDataURL : String,
+        // 
+        profileBannerColour : String
     }
 );
 

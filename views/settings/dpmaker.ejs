@@ -1,0 +1,121 @@
+<%- include("../includes/settings-header.ejs") %>
+    <style>
+        #content {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border: 1px dotted black;
+            cursor: crosshair;
+        }
+
+        #settings {
+            width: 40%;
+            margin: auto;
+        }
+
+        #title,
+        #subtitle {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            border: none;
+            padding: 10px 30px;
+            border-radius: 20px;
+            width: fit-content;
+        }
+
+        input[type="color"] {
+            height: 40px;
+            background-color: transparent;
+            border: none;
+        }
+
+        form {
+            display: inline;
+        }
+    </style>
+
+    <body>
+        <h1 id="title">DP Maker</h1>
+        <p id="subtitle">Create and Design our own profile picture!</p>
+        <div id="content">
+            <canvas id="userDPCanvas"></canvas>
+        </div>
+        <div id="settings">
+            <fieldset>
+                <legend>Painting Setitngs</legend>
+                <label for="">Paint Brush Colour</label><br>
+                <input type="color" id="brushColour" value="#FF0000" onchange="changeStrokeStyle(this)"> <br><br>
+                <label for="">Paint Brush Thickness</label><br>
+                <input type="range" id="brushThickness" min="1" max="30" value="3"
+                    onchange="changeLineWidth(this)"><br><br>
+                <button onclick="clearCanvas()" style="background-color: lawngreen;">Clear Canvas</button>
+                <form action="/settings/changeDP" method="post">
+                    <input type="hidden" name="dataurl" id="dataurl">
+                    <button type="submit" style="background-color: red; color: white;">Set as
+                        DP</button>
+                </form>
+            </fieldset>
+        </div>
+        <script type="text/javascript">
+            var canvas = document.getElementById('userDPCanvas');
+            var ctx = canvas.getContext("2d");
+            var painting = document.getElementById("content");
+            var paintStyle = getComputedStyle(painting);
+            canvas.width = parseInt(paintStyle.getPropertyValue("width"));
+            canvas.height = parseInt(paintStyle.getPropertyValue("height"));
+
+            var mouse = { x: 0, y: 0 };
+
+            canvas.addEventListener('mousemove', function (e) {
+                mouse.x = e.pageX - this.offsetLeft;
+                mouse.y = e.pageY - this.offsetTop;
+            }, false);
+
+            ctx.lineWidth = 3;
+            ctx.lineJoin = 'round';
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#FF0000';
+
+            var changeLineWidth = e => {
+                console.log("line width changes");
+                ctx.lineWidth = e.value;
+            }
+
+            var changeStrokeStyle = e => {
+                ctx.strokeStyle = e.value;
+                console.log("line colour changes");
+            }
+
+            canvas.addEventListener('mousedown', function (e) {
+                ctx.beginPath();
+                ctx.moveTo(mouse.x, mouse.y);
+                canvas.addEventListener('mousemove', onpaint, false);
+            }, false);
+
+            canvas.addEventListener('mouseup', function () {
+                canvas.removeEventListener('mousemove', onpaint, false);
+            }, false)
+
+            function onpaint() {
+                ctx.lineTo(mouse.x, mouse.y);
+                ctx.stroke();
+            }
+
+            var clearCanvas = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+
+            var data;
+
+            setInterval(() => {
+                data = canvas.toDataURL("image/png");
+                document.getElementById("dataurl").value = data;
+            }, 100);
+        </script>
+        <%- include("../includes/settings-footer.ejs") %>
